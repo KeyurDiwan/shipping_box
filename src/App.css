@@ -1,38 +1,188 @@
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar h1 {
+  color: white;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-links {
+  margin-top: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.shipping-form form {
   display: flex;
   flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.shipping-form input,
+.shipping-form select,
+.shipping-form button {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.shipping-form input,
+.shipping-form select {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.cost-preview {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.shipping-form select {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.color-picker-container {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.color-picker-container input[type="color"] {
+  width: 80px; /* Changed from 100% to 80px */
+  height: 50px;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.rgb-value {
+  font-family: monospace;
+  color: #666;
+  min-width: 140px;
+  text-align: left;
+}
+
+.saved-entries {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.saved-entries table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.saved-entries th,
+.saved-entries td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.saved-entries th {
+  background-color: #f4f4f4;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.error {
+  border: 1px solid #ff0000;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+
+/* Toast customization */
+.Toastify__toast-container {
+  min-width: 300px;
+  z-index: 9999;
+}
+
+.Toastify__toast--success {
+  background: #4caf50;
   color: white;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .shipping-form form {
+    max-width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .saved-entries {
+    padding: 10px;
+  }
+
+  .saved-entries table {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .saved-entries table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .color-picker-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rgb-value {
+    margin-top: 5px;
   }
 }
